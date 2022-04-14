@@ -105,10 +105,11 @@ class Produk extends CI_Controller {
 
                     $this->load->library('upload', $config);
 
-                    if(!$this->upload->do_upload('image')){
-                        echo "Gambar Produk Gagal Di Upload!";
-                    }else {
+                    if($this->upload->do_upload('image')){
                         $image = $this->upload->data('file_name');
+                        $this->db->set('image', $image);
+                    }else{
+                        echo $this->upload->display_errors();
                     }
                  }
 

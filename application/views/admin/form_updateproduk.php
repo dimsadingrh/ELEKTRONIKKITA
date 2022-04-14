@@ -11,7 +11,7 @@
 
                 <form method="post" action="<?php echo base_url('admin/produk/update_produk_aksi') ?>" enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-md6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Kategori Produk</label>
                             <input type="hidden" name="id_produk" value="<?php echo $prdk->id_produk ?>">
