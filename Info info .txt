@@ -1,0 +1,72 @@
+#DATABASE
+Nama database :
+rental_mobil -> elektronikkita
+
+Tabel costumer -> pembeli
+field :
+- id_costumer -> id_pembeli
+- gender -> jenis_kelamin
+- no_ktp -> email
+
+Tabel mobil -> produk
+field : 
+- id_mobil -> id_produk
+- kode_type -> kode_kategori
+- merk -> merk
+- no_plat -> nama_produk
+- warna -> warna
+- tahun -> tahun_terbit
+- status -> deskripsi
+- harga
+- stok
+- gambar -> image
+
+Tabel transaksi
+field
+- id_rental -> id_penjualan
+- id_costumer -> id_pembeli
+- id_produk -> id_produk
+- tanggal_rental -> tanggal_pembelian
+- tanggal_pengembalian -> tanggal_pembayaran
+- status_pengembalian -> jumlah
+- status_rental ->
+
+Tabel rental -> penjualan
+field 
+- id_rental -> id_penjualan
+- id_costumer -> id_pembeli
+- tanggal_rental -> tanggal_pembelian
+- tanggal_kembali ->
+- tanggal_pengembalian -> tanggal_pembayaran
+- status_rental ->
+- status_pengembalian -> jumlah
+
+Tabel type -> kategori
+field
+- id_type -> id_kategori
+- kode -> kode_kategori
+- nama -> nama_kategori
+
+
+#VIEWS 
+admin (Dashboard)
+- dashboard -> dashboard
+- data_mobil -> data_produk
+- data type -> kategori
+- data costumer -> data pembeli
+- transaksi -> transaksi
+- laporan -> laporan
+
+#MODELS
+rental_model -> DataProduk
+
+#CONTROLLER
+Data_mobil -> Produk
+
+#VIEWS
+form_tambah_mobil -> form_tambahproduk
+form_update_mobil -> form_tambahproduk
+data_mobil -> dataproduk
+
+#Image source:
+Repeater : https://postimg.cc/pmtPHyQZ/83154366
