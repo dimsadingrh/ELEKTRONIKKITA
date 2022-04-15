@@ -146,7 +146,7 @@ class Produk extends CI_Controller {
         $this->form_validation->set_rules('nama_produk','Nama Produk', 'required');
         $this->form_validation->set_rules('deskripsi','Deskripsi', 'required');
         $this->form_validation->set_rules('warna','Warna', 'required');
-        $this->form_validation->set_rules('tahun_terbit','Kode Kategori', 'required');
+        $this->form_validation->set_rules('tahun_terbit','Tahun Terbit', 'required');
         $this->form_validation->set_rules('harga','Harga', 'required');
         $this->form_validation->set_rules('stok','Stok', 'required');
     }
