@@ -111,7 +111,7 @@ class Produk extends CI_Controller {
                     }else{
                         echo $this->upload->display_errors();
                     }
-                 }
+                }
 
             $data = array(
                 'kode_kategori' => $kode_kategori,
