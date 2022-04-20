@@ -3,7 +3,7 @@
         <div class="section-header">
             <h1>Update Produk</h1>
         </div>
-
+        <a href="<?php echo base_url('admin/produk') ?>" class="btn btn-outline-primary mb-4">Kembali Ke Data Produk</a>
         <div class="card">
             <div class="card-body">
 
@@ -73,8 +73,9 @@
                             <input type="file" name="image" class="form-control">
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
-                        <button type="button" class="btn btn-danger mt-3 ml-4">Reset</button>
+                        <button type="submit" class="btn btn-primary mt-3 mr-4">Simpan</button>
+                        <button type="button" class="btn btn-danger mt-3">Reset</button>
+
 
                     </div>
                 </div>

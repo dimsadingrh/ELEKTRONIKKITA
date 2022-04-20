@@ -13,6 +13,21 @@ class DataProduk extends CI_model {
     public function update_data($table, $data, $where){
         $this->db->update($table,$data,$where);
     }
+
+    public function delete_data($where, $table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
+    public function ambil_id_produk($id)
+    {
+        $hasil = $this->db->where('id_produk', $id)->get('produk');
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        }else{
+            return false;
+        }
+    }
 }
 
 ?>

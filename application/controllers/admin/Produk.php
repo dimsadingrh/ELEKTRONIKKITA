@@ -151,6 +151,28 @@ class Produk extends CI_Controller {
         $this->form_validation->set_rules('stok','Stok', 'required');
     }
 
+    public function detail_produk($id)
+    {
+        $data['detail'] = $this->DataProduk->ambil_id_produk($id);
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/detailproduk',$data);
+        $this->load->view('templates_admin/footer');
+    }
+
+    public function delete_produk($id)
+    {
+        $where = array('id_produk' => $id);
+        $this->DataProduk->delete_data($where, 'produk');
+        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Data Produk Berhasil Dihapus!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>');
+            redirect('admin/produk');
+    }
+
 }
 
 ?>

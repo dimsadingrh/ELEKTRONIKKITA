@@ -52,21 +52,34 @@ field
 admin (Dashboard)
 - dashboard -> dashboard
 - data_mobil -> data_produk
-- data type -> kategori
-- data costumer -> data pembeli
+- data_type -> kategori
+- data_costumer -> data pembeli
 - transaksi -> transaksi
 - laporan -> laporan
+
+pembeli
+-[Folder] costumer -> pembeli
+-[Folder] templates_customer -> templates_pembeli
 
 #MODELS
 rental_model -> DataProduk
 
 #CONTROLLER
 Data_mobil -> Produk
+data_type -> kategori
 
 #VIEWS
 form_tambah_mobil -> form_tambahproduk
-form_update_mobil -> form_tambahproduk
+form_update_mobil -> form_updateproduk
+form_tambah_Type	-> form_tambahkategori
+form_update_type -> form_updatekategori
 data_mobil -> dataproduk
+detail_mobil -> detailproduk
+data_type -> datakategori
+
+#INISIAL
+Produk -> prdk
+Kategori -> ktgr
 
 #Image source:
 Repeater : https://postimg.cc/pmtPHyQZ/83154366

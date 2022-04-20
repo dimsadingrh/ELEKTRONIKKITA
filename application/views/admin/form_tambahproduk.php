@@ -70,7 +70,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mt-3">Simpan</button>
-                        <button type="button" class="btn btn-danger mt-3 ml-4">Reset</button>
+                        <button type="reset" class="btn btn-danger mt-3 ml-4">Reset</button>
 
                     </div>
                 </div>
