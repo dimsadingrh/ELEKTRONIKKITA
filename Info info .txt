@@ -65,8 +65,13 @@ pembeli
 rental_model -> DataProduk
 
 #CONTROLLER
+(Admin)
 Data_mobil -> Produk
 data_type -> kategori
+data_costumer -> Data_pembeli
+
+(Pembeli)
+[Folder]customer -> pembeli
 
 #VIEWS
 form_tambah_mobil -> form_tambahproduk
@@ -76,10 +81,12 @@ form_update_type -> form_updatekategori
 data_mobil -> dataproduk
 detail_mobil -> detailproduk
 data_type -> datakategori
+data_costumer -> data_pembeli
 
 #INISIAL
 Produk -> prdk
 Kategori -> ktgr
+pembeli -> pmbl
 
 #Image source:
 Repeater : https://postimg.cc/pmtPHyQZ/83154366

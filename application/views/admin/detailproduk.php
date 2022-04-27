@@ -14,7 +14,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <img width="300px" src="<?php echo base_url().'/assets/upload/'. $dt->image ?>">
+                        <img width="250px" src="<?php echo base_url().'/assets/upload/'. $dt->image ?>">
                     </div>
                     <div class="col-md-9">
                         <table class="table">

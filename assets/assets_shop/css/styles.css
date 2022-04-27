@@ -3030,8 +3030,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #6777EF;
+  border-color: #6777EF;
 }
 .btn-primary:hover {
   color: #fff;
@@ -3148,6 +3148,11 @@ textarea.form-control-lg {
   border-color: #0dcaf0;
 }
 
+.btn-warning2{
+  color: rgb(255, 255, 255);
+  background-color: #434c8f;
+  border-color: #313767;
+}
 .btn-warning {
   color: #000;
   background-color: #ffc107;
@@ -4505,6 +4510,26 @@ textarea.form-control-lg {
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
   color: #fff;
+}
+
+.card2 {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  outline-offset: -100px;
+  position: relative;
+  overflow: hidden;
+}
+.card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .75s;
+}
+.card:hover .card-image{
+  transform: scale(1.50);
 }
 
 .card {
