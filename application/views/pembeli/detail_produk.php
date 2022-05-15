@@ -46,7 +46,7 @@
                                         if ($dt->stok == "0") {
                                             echo "<div class='btn btn-danger' disable>Stok Kosong</div>";
                                         }else {
-                                            echo anchor('pembeli/tambah_ke_keranjang/'.$dt->id_produk, '<div class="btn btn-warning2 bi-cart">  Masukan Ke Keranjang</div>');
+                                            echo anchor('pembeli/dashboard/tambah_ke_keranjang/'.$dt->id_produk, '<div class="btn btn-warning2 bi-cart">  Masukan Ke Keranjang</div>');
                                         }
                                     ?>
                                 </td>
@@ -54,7 +54,7 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                <a href="<?php echo base_url('pembeli/dashboard/') ?>" class="btn btn-warning bi bi-house-door ml-3">   Kembali Ke Data Produk</a> 
+                                <a href="<?php echo base_url('welcome') ?>" class="btn btn-warning bi bi-house-door ml-3">   Kembali Ke Data Produk</a> 
                                 </td>
                             </tr>
                         </table>

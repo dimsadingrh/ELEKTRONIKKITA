@@ -20,6 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['produk'] = $this->DataProduk->tampil_data()->result();
+        $this->load->view('templates_pembeli/header');
+        $this->load->view('templates_pembeli/topbar');
+        $this->load->view('pembeli/dashboard', $data);
+        $this->load->view('templates_pembeli/footer');
 	}
 }

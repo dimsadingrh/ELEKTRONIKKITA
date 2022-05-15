@@ -1913,6 +1913,10 @@ a.dropdown-item {
 .tab-content > .tab-pane {
   line-height: 28px; }
 
+li {
+  list-style-type: none;
+}
+
 ul.nav-tabs li.nav-item a.nav-link i {
   color: #6777ef; }
 

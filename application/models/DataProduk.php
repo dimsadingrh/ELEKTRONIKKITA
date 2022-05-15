@@ -6,6 +6,10 @@ class DataProduk extends CI_model {
         return $this->db->get($produk);
     }
 
+    public function tampil_data(){
+        return $this->db->get('produk');
+    }
+
     public function insert_data($data,$table){
         $this->db->insert($table,$data);
     }
@@ -27,6 +31,42 @@ class DataProduk extends CI_model {
         }else{
             return false;
         }
+    }
+
+    public function find($id)
+    {
+        $result = $this->db->where('id_produk', $id)
+                            ->limit(1)
+                            ->get('produk');
+        if($result->num_rows() > 0){
+            return $result->row();
+        }else{
+            return array();
+        }
+    }
+
+    public function cek_login()
+    {
+        $username = set_value('username');
+        $password = set_value('password');
+
+        $result = $this->db
+            ->where('username', $username)
+            ->where('password', md5($password))
+            ->limit(1)
+            ->get('pembeli');
+
+        if($result->num_rows() > 0) {
+            return $result->row();
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function update_password($where,$data,$table)
+    {
+        $this->db->where($where);
+        $this->db->update($table,$data);
     }
 }
 

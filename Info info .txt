@@ -61,6 +61,8 @@ pembeli
 -[Folder] costumer -> pembeli
 -[Folder] templates_customer -> templates_pembeli
 
+-
+
 #MODELS
 rental_model -> DataProduk
 
@@ -78,6 +80,8 @@ form_tambah_mobil -> form_tambahproduk
 form_update_mobil -> form_updateproduk
 form_tambah_Type	-> form_tambahkategori
 form_update_type -> form_updatekategori
+form_tambah_costumer -
+form_update_costumer -> form_updatepembeli
 data_mobil -> dataproduk
 detail_mobil -> detailproduk
 data_type -> datakategori
@@ -90,3 +94,12 @@ pembeli -> pmbl
 
 #Image source:
 Repeater : https://postimg.cc/pmtPHyQZ/83154366
+
+#INFO LOGIN
+PEMBELI =
+username : user123
+password : 123
+
+ADMIN =
+username : admin123
+password : 123

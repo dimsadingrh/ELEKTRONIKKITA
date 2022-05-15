@@ -4,30 +4,51 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Elektronik Kita</a>
+                <a class="navbar-brand" href="<?php echo base_url('welcome') ?>">Elektronik Kita</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#!">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="<?php echo base_url('welcome') ?>">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Tentang</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">Semua Kategori</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Gadget</a></li>
-                                <li><a class="dropdown-item" href="#!">Peralatan Rumah Tangga</a></li>
-                                <li><a class="dropdown-item" href="#!">Peralatan Jaringan</a></li>
-                                <li><a class="dropdown-item" href="#!">Perkakas</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('pembeli/Kategori/gadget') ?>">Gadget</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('pembeli/Kategori/peralatan_rumah_tangga') ?>">Peralatan Rumah Tangga</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('pembeli/Kategori/peralatan_jaringan') ?>">Peralatan Jaringan</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('pembeli/Kategori/perkakas') ?>">Perkakas</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Keranjang
-                            <span class="badge text-white ms-1 rounded-pill">0</span>
-                        </button>
+                    <!--<form class="d-flex">
+                        <a class="nav-link btn btn-outline-dark bi-cart-fill me-1" href="<?php echo base_url('pembeli/dashboard/detail_keranjang/' .$this->cart->total_items(). 'items') ?>"> Keranjang</a>
+                        <span class="badge bg-dark text-white ms-1 rounded-pill"><?php $keranjang = ''. $this->cart->total_items() ?></span>
+                    </form>-->
+
+                    <div class="navbar">
+                        <form class="d-flex"> 
+                                <a class="nav-link btn btn-outline-dark bi-cart-fill me-1 mr-2"
+                                    <?php $keranjang = '    Keranjang   '. $this->cart->total_items() ?>
+                                    <?php echo anchor('pembeli/dashboard/detail_keranjang/',$keranjang) ?>
+                                </a>   
+                        </form>
+                    </div>
+                    
+                    <form>
+                        <li class="nav-item dropdown">
+                            <?php  if ($this->session->userdata('nama')) { ?>
+                                <a class="nav-link dropdown-toggle bi bi-person-fill" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="">    Selamat Datang, <b><?php echo $this->session->userdata('nama') ?></b></a>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item bi bi-person" href="<?php echo base_url('pembeli/DetailPembeli/detail_pembeli/'); ?>">    Profil Saya</a></li>
+                                    <li><a class="dropdown-item bi bi-gear text-warning" href="<?php echo base_url('auth/ganti_password/'); ?>">   Ganti Password</a></li>
+                                    <li><a class="dropdown-item bi bi-box-arrow-left text-danger" href="<?php echo base_url('auth/logout/');?>">    Logout</a></li>
+                                </ul>
+                            <?php }else{ ?>
+                                <form class="d-flex">
+                                    <li><a class="nav-link btn btn-outline-dark bi bi-person-fill me-1" href="<?php echo base_url('auth/login/'); ?>"> Login</a></li>
+                                </form>
+                            <?php } ?>
+                        </li>
                     </form>
                 </div>
             </div>
