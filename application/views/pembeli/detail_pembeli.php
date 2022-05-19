@@ -2,54 +2,46 @@
 <div class="container mt-5 mb-5">
     <div class="card">
         <div class="card-body">
-            <?php foreach ($pembeli as $pmbl) : ?>
-                <div class="row">
-                    <div class="col-md-6">
-                        <table class="table">
-                            <br></br>
-                            <br>
-                            <tr>
-                                <th>Nama</th>
-                                <td><?php echo $pmbl->nama ?></td>
-                            </tr>
-                            <tr>
-                                <th>Username</th>
-                                <td><?php echo $pmbl->username ?></td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi</th>
-                                <td><?php echo $pmbl->deskripsi ?></td>
-                            </tr>
-                            <tr>
-                                <th>Alamat</th>
-                                <td><?php echo $pmbl->alamat ?></td>
-                            </tr>
-                            <tr>
-                                <th>Jenis Kelamin</th>
-                                <td><?php echo $pmbl->jenis_kelamin ?></td>
-                            </tr>
-                            <tr>
-                                <th>No Telepon</th>
-                                <td><?php echo $pmbl->no_telp ?></td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td><?php echo $pmbl->email ?></td>
-                            </tr>
-                            <tr>
-                                <th>Password</th>
-                                <td><?php echo $pmbl->password ?></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                <a href="<?php echo base_url('pembeli/dashboard/') ?>" class="btn btn-warning bi bi-house-door ml-3">   Kembali Ke Data Produk</a> 
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table">
+                        <tr>
+                            <h5><b>Username</b></h5>
+                            <p class="card-title"><?= $user; ?></p>
+                        <tr>
+                        <br>
+                        <tr>
+                            <h5><b>Nama</b></h5>
+                            <p class="card-title"><?= $nama; ?></p>
+                        </tr>
+                        <br>
+                        <tr>
+                            <h5><b>Alamat</b></h5>
+                            <p class="card-title"><?= $alamat; ?></p>
+                        </tr>
+                        <br>
+                        <tr>
+                            <h5><b>Jenis Kelamin</b></h5>
+                            <p class="card-title"><?= $jenis_kelamin; ?></p>
+                        </tr>
+                        <br>
+                        <tr>
+                            <h5><b>No. Telepon</b></h5>
+                            <p class="card-title"><?= $no_telp; ?></p>
+                        </tr>
+                        <br>
+                        <tr>
+                            <h5><b>Email</b></h5>
+                            <p class="card-title"><?= $email; ?></p>
+                        </tr>
+                        <br>
+                        <a href="<?php echo base_url('auth/ganti_password') ?>" class="btn btn-danger bi bi-house-door">   Ganti Password</a> 
+                        <br>
+                        <br>
+                        <a href="<?php echo base_url('welcome') ?>" class="btn btn-primary bi bi-house-door">   Kembali Ke Data Produk</a>
+                    </table>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </div>

@@ -38,7 +38,8 @@
                 <td>Rp. <?php echo number_format($total,0,',','.') ?></td>
             </tr>
             <tr>
-                <a href="<?php echo base_url('admin/invoice') ?>"><div class="btn btn-primary mb-3">Kembali Ke Invoice</div></a>
+                <a href="<?php echo base_url('admin/invoice/tracking') ?>"><div class="btn btn-warning mr-3 mb-4">Lihat Tracking</div></a>
+                <a href="<?php echo base_url('admin/invoice') ?>"><div class="btn btn-primary mb-4">Kembali Ke Invoice</div></a>
             </tr>
         </tbody>
     </table>

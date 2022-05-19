@@ -4,13 +4,16 @@
         <div class="card-body">
             <?php foreach ($detail as $dt) : ?>
                 <div class="row">
+
                     <div class="col-md-6">
                         <img width="500px" src="<?php echo base_url('assets/upload/'. $dt->image)?>">
                     </div>
+                    
                     <div class="col-md-6">
                         <table class="table">
                             <br></br>
                             <br>
+                            
                             <tr>
                                 <th>Merk</th>
                                 <td><?php echo $dt->merk ?></td>
