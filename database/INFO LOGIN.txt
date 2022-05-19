@@ -1,0 +1,8 @@
+#INFO LOGIN
+PEMBELI =
+username : user123
+password : 123
+
+ADMIN =
+username : admin123
+password : 123
