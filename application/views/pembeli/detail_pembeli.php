@@ -35,7 +35,7 @@
                             <p class="card-title"><?= $email; ?></p>
                         </tr>
                         <br>
-                        <a href="<?php echo base_url('auth/ganti_password') ?>" class="btn btn-danger bi bi-house-door">   Ganti Password</a> 
+                        <a href="<?php echo base_url('auth/ganti_password') ?>" class="btn btn-danger bi bi-gear">   Ganti Password</a> 
                         <br>
                         <br>
                         <a href="<?php echo base_url('welcome') ?>" class="btn btn-primary bi bi-house-door">   Kembali Ke Data Produk</a>

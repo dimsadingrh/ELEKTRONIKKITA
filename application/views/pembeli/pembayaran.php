@@ -43,7 +43,7 @@
 
                     <div class="form-group">
                         <label><b>Pilih Pengiriman<b></label>
-                        <select class="form-control">
+                        <select class="form-control" name="ekspedisi" placeholder="Pilih Opsi pengiriman" >
                             <option>Pilih Opsi Pengiriman</option>
                             <option>--- Pengiriman Reguler (3 - 5 Hari Kerja) ---</option>
                             <option>JNE</option>
@@ -62,7 +62,7 @@
 
                     <div class="form-group">
                         <label><b>Pilih Pembayaran<b></label>
-                        <select class="form-control">
+                        <select class="form-control" name="via" placeholder="Pilih Opsi Pembayaran">
                             <option>Pilih Opsi Pembayaran</option>
                             <option>--- Virtual Account / MBanking / ATM ---</option>
                             <option>BNI</option>

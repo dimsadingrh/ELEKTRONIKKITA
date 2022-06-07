@@ -11,8 +11,10 @@
                 <th width="20px">Id Invoice</th>
                 <th>Nama Pemesan</th>
                 <th>Alamat Pengiriman</th>
+                <th>Ekspedisi</th>
+                <th>Pembayaran Via</th>
                 <th>Tanggal Pemesanan</th>
-                <th>Batas Pemesanan</th>
+                <!--<th>Batas Pemesanan</th>-->
                 <th width="150px">Aksi</th>
             </tr>
         </thead>
@@ -23,11 +25,13 @@
             <td><?php echo $inv->id ?></td>
             <td><?php echo $inv->nama ?></td>
             <td><?php echo $inv->alamat ?></td>
+            <td><?php echo $inv->ekspedisi ?></td>
+            <td><?php echo $inv->via ?></td>
             <td><?php echo $inv->tgl_pesan ?></td>
-            <td><?php echo $inv->batas_bayar ?></td>
+            <!--<td><?php echo $inv->batas_bayar ?></td>-->
             <td>
                 <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/invoice/detail/'.$inv->id)?>"><i class="fas fa-eye"></i></a>
-                <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/invoice/delete_detail/'.$inv->id)?>"><i class="fas fa-trash"></i></a>
+                <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/invoice/delete_invoice/'.$inv->id)?>"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>

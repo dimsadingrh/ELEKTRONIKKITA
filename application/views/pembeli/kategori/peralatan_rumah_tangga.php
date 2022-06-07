@@ -17,7 +17,7 @@
                                 if ($prm->stok == "0") {
                                     echo "<div class='btn btn-danger' disable>Stok Kosong</div>";
                                 }else {
-                                    echo anchor('pembeli/tambah_ke_keranjang/'.$prm->id_produk, '<div class="btn btn-warning2 bi-cart"></div>');
+                                    echo anchor('pembeli/dashboard/tambah_ke_keranjang/'.$prm->id_produk, '<div class="btn btn-warning2 bi-cart"></div>');
                                     echo anchor('pembeli/dashboard/detail_produk/'. $prm->id_produk,'<div class="btn btn-primary ">Detail</div>');
                                 }
                             ?>

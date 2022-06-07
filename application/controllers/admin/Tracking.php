@@ -1,6 +1,6 @@
 <?php
 
-class Dashboard extends CI_Controller{
+class Tracking extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
@@ -12,20 +12,14 @@ class Dashboard extends CI_Controller{
         }
     }
 
-    public function index()
+    public function tracking()
     {
-        $this->load->model('ModelUser');
-        $this->load->model('ModelProduk');
-        $data['pembeli'] = $this->ModelUser->getUserLimit()->result_array();
-        $data['produk'] = $this->ModelProduk->getLimitBarang()->result_array();
+        $data['invoice'] = $this->ModelInvoice->tampil_data();
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/tracking',$data);
         $this->load->view('templates_admin/footer');
-        $this->load->view('admin/dashboard', $data);
-        
     }
 
 }
-
-?>

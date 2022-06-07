@@ -6,10 +6,14 @@ class ModelInvoice extends CI_Model {
         date_default_timezone_set('Asia/Jakarta');
         $nama = $this->input->post('nama');
         $alamat = $this->input->post('alamat');
+        $ekspedisi = $this->input->post('ekspedisi');
+        $via = $this->input->post('via');
 
         $invoice = array (
             'nama'     => $nama,
             'alamat' => $alamat,
+            'ekspedisi' => $ekspedisi,
+            'via' => $via,
             'tgl_pesan' => date('Y-m-d H:i:s'),
             'batas_bayar' => date('Y-m-d H:i:s', mktime( date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y'))),
         );
@@ -49,6 +53,16 @@ class ModelInvoice extends CI_Model {
         }else{
             return false;
         }
+    }
+
+    public function total($field, $where)
+    {
+        $this->db->select_sum($field);
+        if(!empty($where) && count($where) > 0){
+            $this->db->where($where);
+        }
+        $this->db->from('pesanan');
+        return $this->db->get()->row($field);
     }
 
     public function ambil_id_pesanan($id_invoice)

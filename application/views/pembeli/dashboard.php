@@ -11,11 +11,11 @@
                             <h5 class="card-title mb-1"><?php echo $prdk->nama_produk ?></h5>
                             <br>
                             <h6><?php echo $prdk->merk ?></h6><br>
-                            <br>
-                            <h6>Rp. <?php echo number_format($prdk->harga, 0,',','.') ?></h6>
+                            <h6><b>Rp. <?php echo number_format($prdk->harga, 0,',','.') ?></b></h6>
                             <?php
                                 if ($prdk->stok == "0") {
                                     echo "<div class='btn btn-danger' disable>Stok Kosong</div>";
+                                    echo anchor('pembeli/dashboard/detail_produk/'. $prdk->id_produk,'<div class="btn btn-primary">Detail</div>');
                                 }else {
                                     echo anchor('pembeli/dashboard/tambah_ke_keranjang/'.$prdk->id_produk, '<div class="btn btn-warning2 bi-cart"></div>');
                                     echo anchor('pembeli/dashboard/detail_produk/'. $prdk->id_produk,'<div class="btn btn-primary ">Detail</div>');

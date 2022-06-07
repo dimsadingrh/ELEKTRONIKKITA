@@ -23,5 +23,18 @@ class ModelUser extends CI_model {
             return false;
         }
     }
+
+    public function getUserWhere($where = null)
+    {
+        return $this->db->get_where('pembeli', $where);
+    }
+
+    public function getUserLimit()
+    {
+        $this->db->select('*');
+        $this->db->from('pembeli');
+        $this->db->limit(10, 0);
+        return $this->db->get();
+    }
 }
 ?>
