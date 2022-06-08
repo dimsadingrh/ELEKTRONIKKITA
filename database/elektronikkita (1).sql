@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2022 at 04:36 PM
+-- Generation Time: Jun 08, 2022 at 09:10 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -45,6 +45,8 @@ CREATE TABLE `invoice` (
   `id` int(11) NOT NULL,
   `nama` varchar(56) NOT NULL,
   `alamat` varchar(225) NOT NULL,
+  `ekspedisi` varchar(20) NOT NULL,
+  `via` varchar(20) NOT NULL,
   `tgl_pesan` datetime NOT NULL,
   `batas_bayar` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -53,9 +55,8 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
-(3, 'Dimas', 'Bekasi', '2022-05-15 23:44:35', '2022-05-16 23:44:35'),
-(4, 'lalal', 'lalala', '2022-05-17 21:57:48', '2022-05-18 21:57:48');
+INSERT INTO `invoice` (`id`, `nama`, `alamat`, `ekspedisi`, `via`, `tgl_pesan`, `batas_bayar`) VALUES
+(6, 'test', 'test', 'Go-send', 'Dana', '2022-06-02 07:57:46', '2022-06-03 07:57:46');
 
 -- --------------------------------------------------------
 
@@ -102,10 +103,8 @@ CREATE TABLE `pembeli` (
 --
 
 INSERT INTO `pembeli` (`id_pembeli`, `nama`, `username`, `alamat`, `jenis_kelamin`, `no_telp`, `email`, `password`, `role_id`) VALUES
-(2, 'Dimas Adi', 'dimsadingrh', 'Bekasi', 'Laki-laki', '0812312412512', 'dimasadingrh@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
 (4, 'user', 'user123', 'user123', 'Laki - Laki', '192471519248-', 'user123@gmail.com', '202cb962ac59075b964b07152d234b70', 2),
-(5, 'Dimas Adi', 'admin123', 'bekasi', 'Laki - laki', '085311152854', 'dimasadingrh@gmail.com', '202cb962ac59075b964b07152d234b70', 1),
-(6, 'Dimas Adi Nugroho', 'dimdimdim', 'Bekasi, Jawa Barat ', 'Laki - Laki', '085311152854', 'dimasadingrh@gmail.com', '3e86908f69a276c6064455e3db010fa2', 2);
+(5, 'Dimas Adi', 'admin123', 'bekasi', 'Laki - laki', '085311152854', 'dimasadingrh@gmail.com', '202cb962ac59075b964b07152d234b70', 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +143,10 @@ CREATE TABLE `pesanan` (
 INSERT INTO `pesanan` (`id`, `id_invoice`, `id_produk`, `nama_produk`, `jumlah`, `harga`, `pilihan`) VALUES
 (1, 3, 1, 'Mini Portable Wifi Repeater', 1, 100000, ''),
 (2, 3, 2, 'Modem Mifi 4G LTE E5576', 1, 655000, ''),
-(3, 4, 1, 'Mini Portable Wifi Repeater', 1, 100000, '');
+(3, 4, 1, 'Mini Portable Wifi Repeater', 1, 100000, ''),
+(4, 5, 1, 'Mini Portable Wifi Repeater', 1, 100000, ''),
+(5, 6, 1, 'Mini Portable Wifi Repeater', 1, 100000, ''),
+(6, 7, 1, 'Mini Portable Wifi Repeater', 1, 100000, '');
 
 --
 -- Triggers `pesanan`
@@ -181,7 +183,7 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `kode_kategori`, `merk`, `nama_produk`, `warna`, `tahun_terbit`, `deskripsi`, `harga`, `stok`, `image`) VALUES
-(1, 'prj', 'KexTech', 'Mini Portable Wifi Repeater', 'Putih', '2021', 'WL0189 Max kecepatan 300 mb/s 2,4GHZ . 1 x 6 x 7cm', 100000, 5, 'repeater.png'),
+(1, 'prj', 'KexTech', 'Mini Portable Wifi Repeater', 'Putih', '2021', 'WL0189 Max kecepatan 300 mb/s 2,4GHZ . 1 x 6 x 7cm', 100000, 7, 'repeater.png'),
 (2, 'prj', 'Huawei', 'Modem Mifi 4G LTE E5576', 'Putih', '2019', 'LTE Mobile Wifi E5576 Sharing: Up to 16 perangkat  Range: 10 Meter ', 655000, 5, 'mifi.png'),
 (3, 'prj', 'TP-LINK', 'Wireless Router WR840N', 'Putih', '2020', '300MBps Data Wireless', 453000, 11, 'router.png'),
 (4, 'prj', 'TP-LINK', 'Camera Wireless C100', 'Putih', '2019', 'Res: 1080, Night Vision, Privacy Mode ', 248000, 5, 'wireless_cam.png'),
@@ -282,7 +284,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -294,7 +296,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `pembeli`
 --
 ALTER TABLE `pembeli`
-  MODIFY `id_pembeli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pembeli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `penjualan`
@@ -306,7 +308,7 @@ ALTER TABLE `penjualan`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `produk`
