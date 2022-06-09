@@ -19,7 +19,6 @@ class Dashboard extends CI_Controller{
         $this->load->view('templates_pembeli/topbar2');
         $this->load->view('pembeli/detail_produk', $data);
         $this->load->view('templates_pembeli/footer');
-        
     }
 
     public function tambah_ke_keranjang($id_produk)
