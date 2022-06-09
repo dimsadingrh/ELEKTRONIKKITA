@@ -52,7 +52,7 @@
                             <option>Anter Aja</option>
                             <option>Tiki</option>
                             <option>--- Pengiriman Same-Day (6 - 8 Jam) ---</option>
-                            <option>Go-send</option>
+                            <option>GoSend</option>
                             <option>Grab SameDay</option>
                             <option>Shopee Express</option>
                             <option>Lala Move</option>

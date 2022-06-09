@@ -3,7 +3,7 @@
 class ModelUser extends CI_model {
 
     public function tampil_data($where = null){
-        return $this->db->get('pembeli', $where);
+        return $this->db->get_where('pembeli', $where);
     }
 
     public function insert_data($data,$table){
